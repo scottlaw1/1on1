@@ -1,0 +1,29 @@
+﻿@model _1on1.Models.Team
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page-header">
+    <h1>Welcome to the Team Page</h1>
+</div>
+
+<div>
+    @{ Html.RenderPartial("_PersonSearchForm"); }
+
+    <div id="people-data">
+        @Html.DisplayForModel(Model)
+    </div>
+</div>
+@section scripts
+{
+    <script type="text/javascript">
+        $("#search-btn").click(function () {
+            var searchTerm = $("#search-text").val();
+            $.get("SearchPeople", { searchText: searchTerm })
+                .success(function (data) {
+                    $("#people-data").html(data);
+                });
+        });
+    </script>
+}

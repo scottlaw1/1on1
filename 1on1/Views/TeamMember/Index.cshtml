@@ -1,0 +1,15 @@
+﻿@model _1on1.Models.Person
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="page-header">
+    <h1>Welcome to the Person Page <small>Read all about @Model.FirstName</small></h1>
+</div>
+
+@Html.DisplayForModel(Model)
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

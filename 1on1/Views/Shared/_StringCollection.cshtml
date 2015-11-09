@@ -1,0 +1,10 @@
+﻿
+@model ICollection<string>
+
+<dt>@ViewBag.ListDescription</dt>
+<dd>
+    @foreach (var value in Model)
+    {
+        <span class="label label-primary">@value</span>
+    }
+</dd>
