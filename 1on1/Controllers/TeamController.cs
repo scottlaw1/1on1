@@ -8,9 +8,9 @@ namespace _1on1.Controllers
 {
     public class TeamController : Controller
     {
-        private Team team;
+        private static Team team;
 
-        public TeamController()
+        static TeamController()
         {
             team = new Team();
 
@@ -66,22 +66,22 @@ namespace _1on1.Controllers
             return PartialView("_SearchPeople", result);
         }
 
-        //public ActionResult AddTeamMember()
-        //{
-        //    var person = new Person();
-        //    return View(person);
-        //}
+        public ActionResult AddTeamMember()
+        {
+            var person = new Person();
+            return View(person);
+        }
 
-        //[HttpPost]
-        //public ActionResult AddTeamMember(Person person)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        team.TeamMembers.Add(person);
-        //        return RedirectToAction("Index");
-        //    }
+        [HttpPost]
+        public ActionResult AddTeamMember(Person person)
+        {
+            if (ModelState.IsValid)
+            {
+                team.TeamMembers.Add(person);
+                return RedirectToAction("/");
+            }
 
-        //    return View(person);
-        //}
+            return View(person);
+        }
     }
 }
