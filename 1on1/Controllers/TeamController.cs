@@ -20,7 +20,8 @@ namespace _1on1.Controllers
                 LastName = "Sureja",
                 EmailAddress = "gsureja@nciinc.com",
                 BirthDate = new DateTime(1985, 6, 1),
-                Skills = new List<string>() { "Informatica", "Control-M", "Bash", "Perl", "SQL" }
+                Skills = new HashSet<string>() { "Informatica", "Control-M", "Bash", "Perl", "SQL" },
+                IsContractor = true
             };
 
             var person2 = new Person
@@ -29,7 +30,8 @@ namespace _1on1.Controllers
                 LastName = "Shankar",
                 EmailAddress = "ushankar@nciinc.com",
                 BirthDate = new DateTime(1960, 6, 1),
-                Skills = new List<string>() { "Tableau", "SQL" }
+                Skills = new HashSet<string>() { "Tableau", "SQL" },
+                IsContractor = false
             };
 
             var person3 = new Person
@@ -38,7 +40,8 @@ namespace _1on1.Controllers
                 LastName = "Zyuzin",
                 EmailAddress = "mzyuzin@nciinc.com",
                 BirthDate = new DateTime(1955, 6, 1),
-                Skills = new List<string>() { "Informatica", "SQL", "Java" }
+                Skills = new HashSet<string>() { "Informatica", "SQL", "Java" },
+                IsContractor = true
             };
 
             team.TeamMembers.Add(person1);
@@ -62,5 +65,23 @@ namespace _1on1.Controllers
 
             return PartialView("_SearchPeople", result);
         }
+
+        //public ActionResult AddTeamMember()
+        //{
+        //    var person = new Person();
+        //    return View(person);
+        //}
+
+        //[HttpPost]
+        //public ActionResult AddTeamMember(Person person)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        team.TeamMembers.Add(person);
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(person);
+        //}
     }
 }

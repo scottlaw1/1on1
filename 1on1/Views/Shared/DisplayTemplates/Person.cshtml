@@ -7,11 +7,14 @@
     </div>
     <div class="col-md-8">
         <h3>@Model.FirstName @Model.LastName</h3>
+        <a href="mailto:@Model.EmailAddress">@Model.EmailAddress</a> 
         <p>@Model.FirstName was born on @Model.BirthDate.ToString("D").</p>
         @{
             ViewBag.ListDescription = "Skills:";
             Html.RenderPartial("_StringCollection", Model.Skills);
         }
+        <br /><strong>Contractor:</strong><br />
+        @Html.DisplayFor(model => model.IsContractor)
     </div>
 </div>
 

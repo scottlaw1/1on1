@@ -15,7 +15,7 @@ namespace _1on1.Controllers
                 LastName = "Sureja",
                 EmailAddress = "gsureja@nciinc.com",
                 BirthDate = new DateTime(1985, 6, 1),
-                Skills = new List<string>() { "Informatica", "Control-M", "Bash", "Perl", "SQL" }
+                Skills = new HashSet<string>() { "Informatica", "Control-M", "Bash", "Perl", "SQL" }
             };
 
             return View(person);
