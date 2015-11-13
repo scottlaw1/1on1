@@ -69,6 +69,7 @@ namespace _1on1.Controllers
         public ActionResult AddTeamMember()
         {
             var person = new Person();
+
             return View(person);
         }
 

@@ -17,7 +17,7 @@ namespace _1on1.Models
         [Required]
         public DateTime BirthDate;
 
-        public ICollection<string> Skills;
+        public ICollection<string> Skills { get; set; }
 
         [Required]
         public string FirstName { get; set; }
