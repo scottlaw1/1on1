@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace _1on1.Controllers
 {
-    public class TeamController : Controller
+    public class TeamController : BaseController
     {
         private static Team team;
 
@@ -79,9 +79,10 @@ namespace _1on1.Controllers
             if (ModelState.IsValid)
             {
                 team.TeamMembers.Add(person);
+                Success(string.Format("<b>{0}</b> was successfully added to the database.", person.FirstName), true);
                 return RedirectToAction("/");
             }
-
+            Danger("Looks like something went wrong. Please check your form.");
             return View(person);
         }
     }
