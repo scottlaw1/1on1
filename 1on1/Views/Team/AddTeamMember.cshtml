@@ -5,8 +5,7 @@
 }
 
 <h2>@ViewBag.Title</h2>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -90,6 +89,7 @@
 <div>
     @Html.ActionLink("Back to List", "/")
 </div>
+
 <script>
     $(function () {
         $("#add-skill").click(function () {
@@ -107,6 +107,3 @@
         });
     });
 </script>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
