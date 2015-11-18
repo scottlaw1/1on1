@@ -1,4 +1,5 @@
-﻿using _1on1.Models;
+﻿using _1on1.Filter;
+using _1on1.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,7 @@ namespace _1on1.Controllers
             team.TeamMembers.Add(person3);
         }
 
+        [NotificationFilter]
         public ActionResult Index()
         {
             return View(team);
