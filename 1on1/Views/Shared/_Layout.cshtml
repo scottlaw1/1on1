@@ -1,4 +1,5 @@
-﻿@{
+﻿@using _1on1.Models
+@{
     ViewBag.Application = "Parley";
     ViewBag.Vendor = "Rabbit Hollow Software, Inc.";
 }
@@ -26,8 +27,13 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Team", "Index", "Team")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @foreach (NotificationViewModel notification in ViewBag.Notifications)
+                    {
+                        <li><a href="#">@notification.NotificationType <span class="badge badge-@notification.BadgeClass">@notification.Count</span></a></li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
