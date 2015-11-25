@@ -267,6 +267,7 @@
     <Content Include="Views\Shared\_StringCollection.cshtml" />
     <Content Include="Views\Team\AddTeamMember.cshtml" />
     <Content Include="Views\Shared\_Alerts.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

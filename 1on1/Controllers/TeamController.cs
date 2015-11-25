@@ -50,7 +50,6 @@ namespace _1on1.Controllers
             team.TeamMembers.Add(person3);
         }
 
-        [NotificationFilter]
         public ActionResult Index()
         {
             return View(team);
